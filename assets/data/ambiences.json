@@ -1,0 +1,62 @@
+[
+  {
+    "id": "1",
+    "title": "Forest Focus",
+    "tag": "Focus",
+    "duration": 180,
+    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop",
+    "audio": "forest.mp3",
+    "description": "Immerse yourself in the gentle rustle of leaves and distant birdsong. Perfect for deep concentration.",
+    "recipe": ["Breeze", "Soft Rain", "Binaural"]
+  },
+  {
+    "id": "2",
+    "title": "Deep Calm",
+    "tag": "Calm",
+    "duration": 120,
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop",
+    "audio": "calm.mp3",
+    "description": "Find your center with steady, rhythmic pulses and warm harmonic layers.",
+    "recipe": ["Warm Light", "Mist", "Binaural"]
+  },
+  {
+    "id": "3",
+    "title": "Midnight Sleep",
+    "tag": "Sleep",
+    "duration": 300,
+    "image": "https://images.unsplash.com/photo-1532767153582-b1a0e5145009?q=80&w=2574&auto=format&fit=crop",
+    "audio": "sleep.mp3",
+    "description": "Gentle low-frequency waves designed to lull you into a restful state.",
+    "recipe": ["Soft Rain", "Mist", "Binaural"]
+  },
+  {
+    "id": "4",
+    "title": "Quick Reset",
+    "tag": "Reset",
+    "duration": 60,
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2670&auto=format&fit=crop",
+    "audio": "reset.mp3",
+    "description": "A brief auditory palate cleanser to clear mental clutter.",
+    "recipe": ["Breeze", "Warm Light"]
+  },
+  {
+    "id": "5",
+    "title": "Mountain Air",
+    "tag": "Focus",
+    "duration": 240,
+    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop",
+    "audio": "mountain.mp3",
+    "description": "Crisp, airy soundscapes that provide a sense of space and clarity.",
+    "recipe": ["Breeze", "Binaural"]
+  },
+  {
+    "id": "6",
+    "title": "Ocean Breath",
+    "tag": "Calm",
+    "duration": 150,
+    "image": "https://images.unsplash.com/photo-1505118380757-91f5f45d8de4?q=80&w=2546&auto=format&fit=crop",
+    "audio": "ocean.mp3",
+    "description": "The rhythmic surge and retreat of the tide, grounding your awareness.",
+    "recipe": ["Mist", "Binaural"]
+  }
+]
