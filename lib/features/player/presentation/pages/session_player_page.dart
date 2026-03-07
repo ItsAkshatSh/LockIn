@@ -75,15 +75,22 @@ class _SessionPlayerPageState extends ConsumerState<SessionPlayerPage> {
       });
     }
 
+    final bool isAsset = widget.ambience.image.startsWith('assets/');
+
     return Scaffold(
       body: Stack(
         children: [
           // Calm background visual (Image + Breathing Gradient)
           Positioned.fill(
-            child: Image.network(
-              widget.ambience.image,
-              fit: BoxFit.cover,
-            ),
+            child: isAsset 
+                ? Image.asset(
+                    widget.ambience.image,
+                    fit: BoxFit.cover,
+                  )
+                : Image.network(
+                    widget.ambience.image,
+                    fit: BoxFit.cover,
+                  ),
           ),
           Positioned.fill(
             child: Container(

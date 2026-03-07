@@ -12,6 +12,8 @@ class AmbienceCard extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final textTheme = Theme.of(context).textTheme;
 
+    final bool isAsset = ambience.image.startsWith('assets/');
+
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
@@ -26,12 +28,19 @@ class AmbienceCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Expanded(
-              child: Image.network(
-                ambience.image,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) =>
-                    Container(color: Colors.grey[300]),
-              ),
+              child: isAsset
+                  ? Image.asset(
+                      ambience.image,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(color: Colors.grey[300]),
+                    )
+                  : Image.network(
+                      ambience.image,
+                      fit: BoxFit.cover,
+                      errorBuilder: (context, error, stackTrace) =>
+                          Container(color: Colors.grey[300]),
+                    ),
             ),
             Padding(
               padding: const EdgeInsets.all(12.0),

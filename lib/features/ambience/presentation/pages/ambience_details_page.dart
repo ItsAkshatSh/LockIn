@@ -11,6 +11,7 @@ class AmbienceDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final bool isAsset = ambience.image.startsWith('assets/');
 
     return Scaffold(
       body: Stack(
@@ -21,12 +22,19 @@ class AmbienceDetailsPage extends StatelessWidget {
                 expandedHeight: 300,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
-                  background: Image.network(
-                    ambience.image,
-                    fit: BoxFit.cover,
-                    errorBuilder: (context, error, stackTrace) =>
-                        Container(color: Colors.grey[300]),
-                  ),
+                  background: isAsset
+                      ? Image.asset(
+                          ambience.image,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Container(color: Colors.grey[300]),
+                        )
+                      : Image.network(
+                          ambience.image,
+                          fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Container(color: Colors.grey[300]),
+                        ),
                 ),
               ),
               SliverPadding(
@@ -106,7 +114,7 @@ class AmbienceDetailsPage extends StatelessWidget {
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                       ),
                     ),
-                    const SizedBox(height: 100), // Space for MiniPlayer
+                    const SizedBox(height: 40),
                   ]),
                 ),
               ),

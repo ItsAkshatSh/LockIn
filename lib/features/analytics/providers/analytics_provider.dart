@@ -1,3 +1,4 @@
+import 'dart:developer' as developer;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:lock_in/features/analytics/models/analytics_event.dart';
 import 'package:lock_in/features/analytics/repositories/analytics_repository.dart';
@@ -23,22 +24,23 @@ class AnalyticsService {
     );
     await _repository.logEvent(event);
     
-    // Explicit console logging as requested
-    print('-----------------------------------------');
-    print('[ANALYTICS] Event: $name');
-    print('Time: ${event.timestamp}');
-    print('Metadata: $metadata');
-    print('-----------------------------------------');
+    developer.log(
+      'Event: $name | Metadata: $metadata',
+      name: 'APP.ANALYTICS',
+      time: event.timestamp,
+    );
   }
 
   Future<void> printAllEvents() async {
     await _repository.init();
     final events = await _repository.getEvents();
-    print('======= ALL LOGGED ANALYTICS EVENTS =======');
     for (var event in events) {
-      print('[${event.timestamp}] ${event.name}: ${event.metadata}');
+      developer.log(
+        '${event.name}: ${event.metadata}',
+        name: 'APP.ANALYTICS.HISTORY',
+        time: event.timestamp,
+      );
     }
-    print('===========================================');
   }
 
   Future<List<AnalyticsEvent>> getLoggedEvents() async {

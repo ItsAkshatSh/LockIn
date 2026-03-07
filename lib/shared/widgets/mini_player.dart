@@ -16,6 +16,8 @@ class MiniPlayer extends ConsumerWidget {
 
     final progress = playerState.currentPosition.inSeconds /
         playerState.totalDuration.inSeconds;
+    
+    final bool isAsset = playerState.currentAmbience!.image.startsWith('assets/');
 
     return GestureDetector(
       onTap: () {
@@ -50,12 +52,19 @@ class MiniPlayer extends ConsumerWidget {
                   children: [
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
-                      child: Image.network(
-                        playerState.currentAmbience!.image,
-                        width: 40,
-                        height: 40,
-                        fit: BoxFit.cover,
-                      ),
+                      child: isAsset 
+                        ? Image.asset(
+                            playerState.currentAmbience!.image,
+                            width: 40,
+                            height: 40,
+                            fit: BoxFit.cover,
+                          )
+                        : Image.network(
+                            playerState.currentAmbience!.image,
+                            width: 40,
+                            height: 40,
+                            fit: BoxFit.cover,
+                          ),
                     ),
                     const SizedBox(width: 12),
                     Expanded(
@@ -67,13 +76,16 @@ class MiniPlayer extends ConsumerWidget {
                             playerState.currentAmbience!.title,
                             style: Theme.of(context).textTheme.titleSmall?.copyWith(
                                   fontWeight: FontWeight.bold,
+                                  color: Theme.of(context).colorScheme.onPrimaryContainer,
                                 ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
                           ),
                           Text(
                             playerState.currentAmbience!.tag,
-                            style: Theme.of(context).textTheme.bodySmall,
+                            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                                  color: Theme.of(context).colorScheme.onPrimaryContainer.withOpacity(0.7),
+                                ),
                           ),
                         ],
                       ),

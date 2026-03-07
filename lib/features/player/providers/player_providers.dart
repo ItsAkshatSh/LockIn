@@ -28,9 +28,19 @@ class PlayerNotifier extends StateNotifier<SessionPlayerState> {
         currentPosition: Duration.zero,
         totalDuration: Duration(seconds: ambience.duration),
       );
+      
       _analytics.logEvent('session_start', metadata: {'ambience': ambience.title});
+
+      try {
+        await _audioPlayer.setAsset('assets/music/${ambience.audio}');
+        await _audioPlayer.setLoopMode(LoopMode.one);
+        _audioPlayer.play();
+      } catch (e) {
+        debugPrint('Error loading audio: $e');
+      }
     } else {
       state = state.copyWith(isPlaying: true);
+      _audioPlayer.play();
     }
     _startTimer();
   }
@@ -84,10 +94,13 @@ class PlayerNotifier extends StateNotifier<SessionPlayerState> {
   void completeSession() {
     _timer?.cancel();
     _audioPlayer.stop();
-    _analytics.logEvent('session_complete', metadata: {
+    
+    _analytics.logEvent('session_end', metadata: {
+      'status': 'completed',
       'ambience': state.currentAmbience?.title ?? 'Unknown',
       'duration': state.currentPosition.inSeconds
     });
+
     state = state.copyWith(
       isPlaying: false,
       isSessionCompleted: true,
@@ -98,10 +111,13 @@ class PlayerNotifier extends StateNotifier<SessionPlayerState> {
   void endSessionManually() {
     _timer?.cancel();
     _audioPlayer.stop();
-    _analytics.logEvent('session_manual_end', metadata: {
+
+    _analytics.logEvent('session_end', metadata: {
+      'status': 'manual_quit',
       'ambience': state.currentAmbience?.title ?? 'Unknown',
       'last_position': state.currentPosition.inSeconds
     });
+
     state = state.copyWith(
       isPlaying: false,
       isSessionCompleted: true,
@@ -110,6 +126,7 @@ class PlayerNotifier extends StateNotifier<SessionPlayerState> {
 
   void resetSession() {
     state = SessionPlayerState();
+    _audioPlayer.stop();
   }
 
   void seek(Duration position) {
@@ -117,6 +134,7 @@ class PlayerNotifier extends StateNotifier<SessionPlayerState> {
       completeSession();
     } else {
       state = state.copyWith(currentPosition: position);
+      _audioPlayer.seek(position);
     }
   }
 

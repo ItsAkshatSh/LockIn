@@ -6,6 +6,7 @@ import 'package:lock_in/features/ambience/presentation/widgets/ambience_card.dar
 import 'package:lock_in/shared/widgets/mini_player.dart';
 import 'package:lock_in/features/journal/presentation/pages/journal_history_page.dart';
 import 'package:lock_in/features/settings/presentation/pages/settings_page.dart';
+import 'package:lock_in/features/player/providers/player_providers.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});
@@ -14,6 +15,8 @@ class HomePage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final filteredAmbiencesAsync = ref.watch(filteredAmbiencesProvider);
     final selectedTag = ref.watch(filterTagProvider);
+    final playerState = ref.watch(playerProvider);
+    final isPlayerActive = playerState.currentAmbience != null && !playerState.isSessionCompleted;
 
     return Scaffold(
       appBar: AppBar(
@@ -105,7 +108,7 @@ class HomePage extends ConsumerWidget {
                       );
                     }
                     return GridView.builder(
-                      padding: const EdgeInsets.all(16),
+                      padding: const EdgeInsets.fromLTRB(16, 16, 16, 0),
                       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: 2,
                         crossAxisSpacing: 16,
@@ -122,7 +125,7 @@ class HomePage extends ConsumerWidget {
                   error: (err, stack) => Center(child: Text('Error: $err')),
                 ),
               ),
-              const SizedBox(height: 80),
+              if (isPlayerActive) const SizedBox(height: 80),
             ],
           ),
           const Positioned(

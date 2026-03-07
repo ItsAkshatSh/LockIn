@@ -4,8 +4,8 @@
     "title": "Forest Focus",
     "tag": "Focus",
     "duration": 180,
-    "image": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop",
-    "audio": "forest.mp3",
+    "image": "assets/images/forest.avif",
+    "audio": "forest.m4a",
     "description": "Immerse yourself in the gentle rustle of leaves and distant birdsong. Perfect for deep concentration.",
     "recipe": ["Breeze", "Soft Rain", "Binaural"]
   },
@@ -14,8 +14,8 @@
     "title": "Deep Calm",
     "tag": "Calm",
     "duration": 120,
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop",
-    "audio": "calm.mp3",
+    "image": "assets/images/deepcalm.avif",
+    "audio": "deepcalm.m4a",
     "description": "Find your center with steady, rhythmic pulses and warm harmonic layers.",
     "recipe": ["Warm Light", "Mist", "Binaural"]
   },
@@ -24,8 +24,8 @@
     "title": "Midnight Sleep",
     "tag": "Sleep",
     "duration": 300,
-    "image": "https://images.unsplash.com/photo-1532767153582-b1a0e5145009?q=80&w=2574&auto=format&fit=crop",
-    "audio": "sleep.mp3",
+    "image": "assets/images/sleep.avif",
+    "audio": "sleep.m4a",
     "description": "Gentle low-frequency waves designed to lull you into a restful state.",
     "recipe": ["Soft Rain", "Mist", "Binaural"]
   },
@@ -34,8 +34,8 @@
     "title": "Quick Reset",
     "tag": "Reset",
     "duration": 60,
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=2670&auto=format&fit=crop",
-    "audio": "reset.mp3",
+    "image": "assets/images/reset.avif",
+    "audio": "reset.m4a",
     "description": "A brief auditory palate cleanser to clear mental clutter.",
     "recipe": ["Breeze", "Warm Light"]
   },
@@ -44,8 +44,8 @@
     "title": "Mountain Air",
     "tag": "Focus",
     "duration": 240,
-    "image": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2670&auto=format&fit=crop",
-    "audio": "mountain.mp3",
+    "image": "assets/images/mountain.avif",
+    "audio": "wind.m4a",
     "description": "Crisp, airy soundscapes that provide a sense of space and clarity.",
     "recipe": ["Breeze", "Binaural"]
   },
@@ -54,8 +54,8 @@
     "title": "Ocean Breath",
     "tag": "Calm",
     "duration": 150,
-    "image": "https://images.unsplash.com/photo-1505118380757-91f5f45d8de4?q=80&w=2546&auto=format&fit=crop",
-    "audio": "ocean.mp3",
+    "image": "assets/images/ocean.avif",
+    "audio": "ocean.m4a",
     "description": "The rhythmic surge and retreat of the tide, grounding your awareness.",
     "recipe": ["Mist", "Binaural"]
   }
