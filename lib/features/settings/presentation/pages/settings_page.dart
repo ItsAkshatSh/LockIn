@@ -21,18 +21,16 @@ class SettingsPage extends ConsumerWidget {
           ),
           ListTile(
             title: const Text('Dark Mode'),
-            trailing: DropdownButton<ThemeMode>(
-              value: settings.themeMode,
-              onChanged: (mode) {
-                if (mode != null) {
-                  ref.read(settingsProvider.notifier).setThemeMode(mode);
-                }
-              },
-              items: const [
-                DropdownMenuItem(value: ThemeMode.system, child: Text('System')),
-                DropdownMenuItem(value: ThemeMode.light, child: Text('Light')),
-                DropdownMenuItem(value: ThemeMode.dark, child: Text('Dark')),
+            trailing: SegmentedButton<ThemeMode>(
+              segments: const [
+                ButtonSegment(value: ThemeMode.system, icon: Icon(Icons.settings_brightness)),
+                ButtonSegment(value: ThemeMode.light, icon: Icon(Icons.light_mode)),
+                ButtonSegment(value: ThemeMode.dark, icon: Icon(Icons.dark_mode)),
               ],
+              selected: {settings.themeMode},
+              onSelectionChanged: (Set<ThemeMode> newSelection) {
+                ref.read(settingsProvider.notifier).setThemeMode(newSelection.first);
+              },
             ),
           ),
           const Divider(),
@@ -63,9 +61,6 @@ class SettingsPage extends ConsumerWidget {
           const ListTile(
             title: Text('LockIn Version'),
             subtitle: Text('1.0.0'),
-          ),
-          const ListTile(
-            title: Text('Made with Flutter & Material 3'),
           ),
         ],
       ),

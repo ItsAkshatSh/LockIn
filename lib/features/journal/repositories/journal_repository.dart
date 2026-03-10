@@ -6,9 +6,6 @@ class JournalRepository {
 
   Future<void> init() async {
     if (!Hive.isBoxOpen(boxName)) {
-      // For this demo, since I can't run build_runner, 
-      // I'll register the adapter manually or use a simple map box
-      // Hive.registerAdapter(JournalEntryAdapter()); 
       await Hive.openBox(boxName);
     }
   }

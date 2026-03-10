@@ -4,7 +4,7 @@
     "title": "Forest Focus",
     "tag": "Focus",
     "duration": 180,
-    "image": "assets/images/forest.avif",
+    "image": "assets/images/forest.webp",
     "audio": "forest.m4a",
     "description": "Immerse yourself in the gentle rustle of leaves and distant birdsong. Perfect for deep concentration.",
     "recipe": ["Breeze", "Soft Rain", "Binaural"]
@@ -14,7 +14,7 @@
     "title": "Deep Calm",
     "tag": "Calm",
     "duration": 120,
-    "image": "assets/images/deepcalm.avif",
+    "image": "assets/images/deepcalm.webp",
     "audio": "deepcalm.m4a",
     "description": "Find your center with steady, rhythmic pulses and warm harmonic layers.",
     "recipe": ["Warm Light", "Mist", "Binaural"]
@@ -24,7 +24,7 @@
     "title": "Midnight Sleep",
     "tag": "Sleep",
     "duration": 300,
-    "image": "assets/images/sleep.avif",
+    "image": "assets/images/sleep.webp",
     "audio": "sleep.m4a",
     "description": "Gentle low-frequency waves designed to lull you into a restful state.",
     "recipe": ["Soft Rain", "Mist", "Binaural"]
@@ -34,7 +34,7 @@
     "title": "Quick Reset",
     "tag": "Reset",
     "duration": 60,
-    "image": "assets/images/reset.avif",
+    "image": "assets/images/reset.webp",
     "audio": "reset.m4a",
     "description": "A brief auditory palate cleanser to clear mental clutter.",
     "recipe": ["Breeze", "Warm Light"]
@@ -44,7 +44,7 @@
     "title": "Mountain Air",
     "tag": "Focus",
     "duration": 240,
-    "image": "assets/images/mountain.avif",
+    "image": "assets/images/mountain.webp",
     "audio": "wind.m4a",
     "description": "Crisp, airy soundscapes that provide a sense of space and clarity.",
     "recipe": ["Breeze", "Binaural"]
@@ -54,7 +54,7 @@
     "title": "Ocean Breath",
     "tag": "Calm",
     "duration": 150,
-    "image": "assets/images/ocean.avif",
+    "image": "assets/images/ocean.webp",
     "audio": "ocean.m4a",
     "description": "The rhythmic surge and retreat of the tide, grounding your awareness.",
     "recipe": ["Mist", "Binaural"]
